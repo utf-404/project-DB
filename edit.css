@@ -1,0 +1,71 @@
+/* body 스타일 */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* h2 스타일 */
+h2 {
+  background-color: #8ca3cf;
+  color: #fff;
+  padding: 20px 0;
+  margin: 0;
+}
+
+/* .container 스타일 */
+.container {
+  background-color: #fff;
+  padding: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 60%;
+  margin: auto;
+}
+
+form label {
+  margin-bottom: 10px;
+  display: block;
+  font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="checkbox"],
+form input[type="date"],
+form textarea {
+  width: calc(100% - 22px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+form input[type="submit"] {
+  padding: 12px 24px;
+  background-color:  #8ca3cf;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+  background-color:  #8ca3cf;
+}
+
+/* .review-button 스타일 */
+.review-button {
+  padding: 12px 24px;
+  background-color:  #8ca3cf;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.review-button:hover {
+  background-color:  #6e85b3;
+}

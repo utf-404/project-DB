@@ -1,0 +1,184 @@
+header h1 {
+    color: #475670;
+    margin: 0;
+  }
+  
+  header {
+    margin-bottom: 10px;
+  }
+  #reviewContent {
+    margin-top: 20px;
+  }
+  
+  /* 리뷰 폼 스타일 */
+  .review-form {
+    background-color: #d1e5fc; /* 리뷰 폼 색상 변경 */
+    padding: 50px;
+    padding-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 500px;
+    margin: 10px;
+    text-align: left;
+  }
+  
+  .review-form label {
+    display: block;
+    margin: 10px 0;
+  }
+  
+  #review-form-under {
+    width: calc(100%);
+  }
+  
+  .review_check {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px 30px 10px 30px;
+  }
+  
+  .review-form input[type="text"]{
+    width: calc(100% - 22px); /* 입력창의 너비 조정 */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .review-form select{
+    width: 70%; /* 원하는 크기로 조정 */
+    padding: 8px; /* 내부 여백 조정 */
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  
+  .review-form textarea {
+    width: 100%;
+    padding-top: 20px; /* 위 여백 늘리기 */
+    padding-bottom: 20px; /* 아래 여백 늘리기 */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+    height: 200px; /* 원하는 높이로 조절 */
+  }
+  
+  #rating {
+      margin-top: 10px;
+  }
+  
+  .review-form ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .review-form li {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .review-form input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  .review-form label {
+    margin: 0;
+  }
+    
+  /* ... 이전의 CSS 코드 ... */
+  
+  .review-form input[type="text"],
+  .review-form select,
+  .review-form textarea {
+    width: calc(100% - 22px); /* 입력창의 너비 조정 */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .review-form select {
+    width: 100%; /* 원하는 크기로 조정 */
+  }
+  
+  .review-form textarea {
+    height: 150px; /* 원하는 높이로 조절 */
+    resize: vertical;
+  }
+  
+  .review-form ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .review-form li {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .review-form input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  .review-form button {
+    padding: 10px 20px;
+    background-color: #8ca3cf;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .review-form button:hover {
+    background-color: #a2cefd;
+  }
+  
+  .review-form label {
+      user-select: none;
+      -webkit-user-select: none;
+  }
+  
+  /* 리뷰 목록과 버튼 스타일 */
+.reviews {
+  background-color: #d1e5fc; /* 배경색 변경 */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px; /* 아래 여백 추가 */
+}
+
+.reviews h2 {
+  margin-bottom: 10px; /* 제목과 리스트 사이 여백 추가 */
+}
+
+.reviews a {
+  display: block;
+  width: fit-content; /* 링크를 텍스트 크기에 맞게 조정 */
+  margin-bottom: 10px; /* 아래 여백 추가 */
+  color: #007bff;
+}
+
+.reviews a:hover {
+  text-decoration: underline; /* 링크에 호버 시 밑줄 추가 */
+  color: #0056b3;
+}
+
+/* 버튼 스타일 */
+button {
+  display: block;
+  margin: 20px auto; /* 버튼 가운데 정렬 */
+  padding: 10px 20px;
+  max-width: 500px; /* 최대 가로 크기 설정 */
+  background-color: #8ca3cf;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: fit-content; /* 텍스트 크기에 맞게 버튼 너비 조정 */
+}
+
+button:hover {
+  background-color: #a2cefd;
+}

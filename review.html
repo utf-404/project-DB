@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>review</title>
+  <link rel="stylesheet" type="text/css" href="review.css">
+  <link rel="stylesheet" type="text/css" href="common.css"/>
+  <link rel="stylesheet" href="dark.css">
+</head>
+<body>
+  <header>
+  <div class="header-left">
+    <h1>수혜자 리뷰</h1>
+  </div>
+  <div class="header-right">
+    <button onclick="window.location.href='index.php'">게시판</button>
+  </div>
+  </header>
+  <div class="flex-col align-center">
+    <h3 class="review-before-quote">여러분의 소중한 리뷰가 또 다른 나눔을 만듭니다!</h3>
+  <form id="add-post-form" method="POST" action="review.php">
+  <section class="review-form">
+    <form id="reviewForm">
+      <h2>리뷰 작성</h2>
+      <input type="text" id="id" name="id" placeholder="아이디" class="input" value="" maxlength="20" autocapitalize="off">
+      <input type="text" id="title" name="title" placeholder="제목을 입력하세요." class="input" value="" maxlength="1000" autocapitalize="off">
+
+      <label for="rating">평점:</label>
+      <select id="rating" name="rating" required>
+        <option value="5">5 (매우 만족)</option>
+        <option value="4">4 (만족)</option>
+        <option value="3">3 (보통)</option>
+        <option value="2">2 (불만족)</option>
+        <option value="1">1 (매우 불만족)</option>
+      </select><br>
+      <div class="review_check">
+        <ul>
+          <li>
+            <input type="checkbox" id="price1" name="price" value="1">
+            <label for="price1">다음에도 해당 기부자와 만나고 싶다.</label>
+          </li>
+          <li>
+            <input type="checkbox" id="price1" name="price" value="2">
+            <label for="price1">해당 분야 전문 지식을 갖고 있어요.</label>
+          </li>
+          <li>
+            <input type="checkbox" id="product_quality1" name="product_quality" value="3">
+            <label for="product_quality1">의사소통이 원할해요.</label>
+          </li>
+          <li>
+            <input type="checkbox" id="product_quality1" name="product_quality" value="4">
+            <label for="product_quality1">친절한 태도를 유지했어요.</label>
+          </li>
+          <li>
+            <input type="checkbox" id="product_quality1" name="product_quality" value="5">
+            <label for="product_quality1">약속한 시간을 잘 지켜요.</label>
+          </li>
+          <li>
+            <input type="checkbox" id="product_quality1" name="product_quality" value="6">
+            <label for="product_quality1">적극적이고 책임감이 있어요.</label>
+          </li>
+          <li>
+            <input type="checkbox" id="product_quality1" name="product_quality" value="7">
+            <label for="product_quality1">봉사 목표를 달성했어요.</label>
+          </li>
+          <li>
+            <input type="checkbox" id="product_quality1" name="product_quality" value="8">
+            <label for="product_quality1">봉사 결과가 만족스러워요.</label>
+          </li>
+        </ul>
+      </div>
+      
+      <label for="reviewContent">
+        <textarea id="reviewContent" name="reviewContent" required placeholder="리뷰 내용을 입력하세요."></textarea><br>
+      </label>
+      <button type="submit">리뷰 작성</button>
+    </div>
+    </form>
+  </section>
+    <section class="reviews">
+      <h2>리뷰 목록</h2>
+      <ul id="reviewList">
+        <!-- 추가된 리뷰들이 여기에 동적으로 추가 -->
+      </ul>
+      <a href="review_list.php">리뷰 목록 보기</a> 
+    </section>
+  </section>
+
+  <script>
+    
+    function addReview(event) {
+    event.preventDefault();
+    const id = document.getElementById('id').value;
+    const title = document.getElementById('title').value;
+    const rating = document.getElementById('rating').value;
+    const checkboxesPrice = document.querySelectorAll('input[name="price[]"]:checked');
+    const checkboxesProductQuality = document.querySelectorAll('input[name="product_quality[]"]:checked');
+    const checklist = Array.from(checkboxesPrice).map(checkbox => checkbox.value).join(', ');
+    const productQuality = Array.from(checkboxesProductQuality).map(checkbox => checkbox.value).join(', ');
+    const reviewContent = document.getElementById('reviewContent').value;
+
+    const reviewData = {
+      id: id,
+      title: title,
+      rating: rating,
+      checklist: checklist,
+      productQuality: productQuality,
+      reviewContent: reviewContent
+    };
+
+      fetch('review.php', {
+        method: 'POST',
+        body: JSON.stringify(reviewData),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        updateReviewList(); // 리뷰가 추가된 후 목록을 업데이트하는 함수 호출
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    }
+
+    function updateReviewList() {
+      fetch('review.php')
+        .then(response => response.json())
+        .then(data => {
+          const reviewList = document.getElementById('reviewList');
+          reviewList.innerHTML = '';
+
+          data.forEach(review => {
+            const li = document.createElement('li');
+            const h3 = document.createElement('h3');
+            h3.textContent = review.review_time_logid; // 아이디로 변경 혹은 제목으로 변경 가능.
+            li.appendChild(h3);
+            const p = document.createElement('p');
+            p.textContent = review.review_time_text + ' (평점: ' + review.review_time_score + ')';
+            li.appendChild(p);
+            reviewList.appendChild(li);
+          });
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    }
+
+    document.getElementById('reviewForm').addEventListener('submit', addReview);
+    updateReviewList();
+  </script>
+</body>
+</html>

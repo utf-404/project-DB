@@ -1,0 +1,91 @@
+/* 전체 페이지 스타일 */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+/* 헤더 스타일 */
+header {
+  background-color: #8ca3cf;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header a {
+  text-decoration: none;
+}
+
+header button {
+  padding: 10px 20px;
+  background-color: #8ca3cf;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+header button:hover {
+  background-color: #a2cefd;
+}
+
+/* 메인 섹션 스타일 */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+section {
+  width: 80%;
+  margin-bottom: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+  margin-bottom: 20px;
+}
+
+/* 푸터 스타일 */
+footer {
+  background-color: #8ca3cf;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  margin-top: auto;
+}
+
+/* 계정 탈퇴 버튼 스타일 */
+.account-actions {
+  display: flex;
+}
+
+.account-actions form {
+  margin-left: 10px;
+}
+
+.account-actions input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.account-actions input[type="submit"]:hover {
+  background-color: #c82333;
+}

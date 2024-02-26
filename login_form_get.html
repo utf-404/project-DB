@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login_page</title>
+  <link rel="stylesheet" type="text/css" href="common.css">
+  <link rel="stylesheet" type="text/css" href="account.css">
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <h1>로그인</h1>
+    </div>
+    <div class="header-right">
+      <button class="header-button" onclick="window.location.href='index.php'">게시판</button>
+    </div>
+  </header>
+  <!-- volunteer_time 테이블에 대한 로그인 -->
+  <div class="app">
+    <div class="flex align-center">
+      <div class="banner" style="background-image:url('banner_bfcy_login.png')"></div>
+      <form action="login_form_get.php" method="post">
+        <div class="login_form">
+          <h3 class="mb-0">소중한 나눔의 시작</h3>
+          <h3>수혜자 로그인</h3>
+          <input type="text" id="served_id" name="served_id" placeholder="아이디" class="input" value="" maxlength="20" autocapitalize="off">
+        <input type="password" id="served_pw" name="served_pw" placeholder="비밀번호" class="input" value="" maxlength="20" autocomplete="new-password">
+        <input type="submit" value="로그인">
+        </div>
+      </form>  
+    </div>
+    <h4>계정이 없으신가요? <a href="SignUp_account_choice.html">회원 가입</a></h4>  
+  </div>
+</body>
+</html>

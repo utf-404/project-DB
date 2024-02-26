@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>봉사 모집</title>
+  <link rel="stylesheet" type="text/css" href="home.css">
+</head>
+<body>
+  <header>
+    <h1>봉사 모집</h1>
+    <a href="loginChoice.php"><button>로그인</button></a>
+    <button onclick="window.location.href='review.html'">리뷰</button>
+  </header>
+  <section class="board">
+    <h2>게시물 목록</h2>
+    <ul id="post-list">
+      <!-- 여기에 동적으로 추가될 게시물 목록 -->
+    </ul>
+  </section>
+  <section class="post">
+    <h2>게시물 내용</h2>
+    <div id="post-content">
+      <!-- 여기에 동적으로 선택된 게시물의 내용이 표시됨 -->
+    </div>
+  </section>
+
+  <!-- 게시물 추가 부분 -->
+  <section class="add-post">
+    <h2>게시물 추가</h2>
+    <form id="add-post-form">
+      <label for="donor-id">기부자 ID:</label>
+      <input type="text" id="donor-id" name="donor-id"><br><br>
+
+      <label for="post-title">제목:</label>
+      <input type="text" id="post-title" name="post-title"><br><br>
+
+      <label for="post-content">내용:</label>
+      <textarea id="post-content" name="post-content"></textarea><br><br>
+
+      <label for="volunteer-field">봉사 분야:</label>
+      <select id="volunteer-field" name="volunteer-field">
+        <option value="환경개선">환경개선</option>
+        <option value="사회복지">사회복지</option>
+        <option value="교육제공">교육제공</option>
+        <option value="문화예술">문화예술</option>
+        <option value="정서지원">정서지원</option>
+        <option value="재능활용">재능활용</option>
+        <option value="레저/스포츠">레저/스포츠</option>
+        <option value="식사지원">식사지원</option>
+        <option value="재난재해">재난재해</option>
+        <option value="IT지원">IT지원</option>
+        <option value="사회상담">사회상담</option>
+        <option value="행사지원">행사지원</option>
+      </select><br><br>
+
+      <label for="volunteer-date">봉사 날짜:</label>
+      <input type="date" id="volunteer-date" name="volunteer-date"><br><br>
+
+      <label for="location">지역:</label>
+      <select id="location-field" name="location-field">
+        <option value="서울">서울</option>
+        <option value="경기도">경기도</option>
+        <option value="인천">인천</option>
+        <option value="충남">충남</option>
+        <option value="충북">충북</option>
+        <option value="대전">대전</option>
+        <option value="경북">경북</option>
+        <option value="대구">대구</option>
+        <option value="경남">경남</option>
+        <option value="부산">부산</option>
+        <option value="전북">전북</option>
+        <option value="전남">전남</option>
+        <option value="광주">광주</option>
+        <option value="강원">강원</option>
+        <option value="제주">제주</option>
+      </select><br><br>
+
+      <input type="submit" value="추가">
+    </form>
+  </section>
+
+  <script>
+    const posts = [
+      { id: 1, title: '게시물 제목 1', content: '게시물 내용 1' },
+      { id: 2, title: '게시물 제목 2', content: '게시물 내용 2' }
+    ];
+
+    function displayPostList() {
+      const postList = document.getElementById('post-list');
+      postList.innerHTML = '';
+
+      posts.forEach(post => {
+        const listItem = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = '#';
+        link.textContent = post.title;
+        link.onclick = () => displayPostContent(post.id);
+        listItem.appendChild(link);
+        postList.appendChild(listItem);
+      });
+    }
+
+    function displayPostContent(postId) {
+      const selectedPost = posts.find(post => post.id === postId);
+      const postContent = document.getElementById('post-content');
+      postContent.innerHTML = `<h3>${selectedPost.title}</h3><p>${selectedPost.content}</p>`;
+    }
+
+    function addPost(title, content) {
+      const newPost = {
+        id: posts.length + 1,
+        title,
+        content
+      };
+      posts.push(newPost);
+      displayPostList();
+    }
+
+    const addPostForm = document.getElementById('add-post-form');
+    addPostForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const title = document.getElementById('post-title').value;
+      const content = document.getElementById('post-content').value;
+      addPost(title, content);
+      addPostForm.reset();
+    });
+
+    displayPostList();
+  </script>
+</body>
+</html>

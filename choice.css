@@ -1,0 +1,54 @@
+/* body 스타일 */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #a2cefd;;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* 페이지 내용 스타일 */
+p {
+  font-size: 18px;
+  text-align: center;
+  margin: 20px;
+}
+
+.box {
+  background-color: #fff;
+  border: 2px solid #88c0d8;
+  border-radius: 5px;
+  padding: 70px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+}
+
+/* 회원가입 버튼 스타일 */
+input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #8ca3cf;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.choice {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+}
+
+.choice span {
+  margin-right: 20px;
+  font-weight: 700;
+}
+
+.choice input {
+  color: #000;
+  font-weight: 700;
+}

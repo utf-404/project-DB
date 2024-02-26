@@ -1,0 +1,54 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 0;
+  background-color: #e8fcfd;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.review-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.review {
+  background-color: #d1e5fc;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.review-info {
+  font-weight: bold;
+}
+
+.review-content {
+  margin-top: 8px;
+}
+
+/* 추가된 CSS */
+button {
+  display: block;
+  margin: 20px auto; /* 화면 가운데로 정렬 */
+  padding: 10px 20px;
+  background-color: #8ca3cf;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #a2cefd;
+}
+
+/* 리뷰 목록 아래 여백 추가 */
+.review-container {
+  margin-bottom: 40px;
+}

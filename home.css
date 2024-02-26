@@ -1,0 +1,222 @@
+.dropdown {
+    position: relative;
+  }
+  
+  .dropdown-content {
+    display: flex;
+    flex-direction: column;
+    display: none;
+    position: absolute;
+    right: -35px;
+    top: 40px;
+    min-width: 160px;
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  #donor-login, #bfcy-login {
+    display: block;
+    width: 160px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  #donor-login {
+    background-image: url("/donor.png");
+    filter:grayscale(100%);
+  }
+  
+  #donor-login:hover {
+    filter: grayscale(0);
+  }
+  
+  #bfcy-login {
+    background-image: url("/beneficiary.png");
+    filter:grayscale(100%);
+  }
+  
+  #bfcy-login:hover {
+    filter: grayscale(0);
+  }
+  
+  .banner {
+    background-image: url("./mainbanner.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 640px;
+  }
+  
+  .header-sitename .boldtext {
+    font-size: 35px;
+    font-weight: 700;
+  }
+  
+  .header-sitename {
+    color: #8ca3cf;
+    font-size: 16px;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  /* 이전의 CSS 코드 뒤에 추가할 내용 */
+
+/* board 섹션과 게시물 목록 관련 스타일 */
+.board {
+  margin: 30px;
+}
+
+.board-wrapper {
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap; /* 목록을 여러 줄로 표시하도록 수정 */
+  justify-content: space-between; /* 항목들을 여백을 주고 나열하도록 수정 */
+  padding: 20px; /* 여백 추가 */
+}
+
+
+
+.post-content {
+  margin: 10px 0;
+  letter-spacing: -0.05em;
+  color: #505050;
+  overflow: hidden; /* 내용이 넘치면 숨기기 */
+  text-overflow: ellipsis; /* 넘치는 내용을 생략 부호로 표시 */
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* 최대 4줄까지만 표시 */
+  -webkit-box-orient: vertical;
+}
+
+.post > a {
+  text-decoration: none;
+  color: black;
+}
+
+  
+  a {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  a:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: #0056b3;
+  }
+  
+  /* 게시물 추가 부분 스타일 */
+  .add-post {
+    margin: 30px;
+  }
+  
+  .add-post-wrapper {
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+  }
+  
+  .add-post h2 {
+    margin-top: 0;
+  }
+  
+  .form-wrapper {
+    display: flex;
+  }
+  
+  .add-post label {
+    margin-bottom: 5px;
+  }
+  
+  #add-post-form {
+    display: flex;
+    flex-direction: column;
+  }
+  /* 입력 필드 스타일 */
+  #add-post-meta {
+    border-spacing: 15px;
+    width: 300px;
+  }
+  
+  #add-post-meta tr {
+    height: 50px;
+  }
+  
+  #add-post-meta td:first-child {
+    margin-right: 40px;
+  }
+  
+  .add-post label, .add-post input, .add-post select {
+    padding: 5px;
+  }
+  
+  .add-post label {
+    font-size: 17px;
+    font-weight: 700;
+  }
+  .add-post input {
+    border: none;
+    border-radius: 3px;
+  }
+  
+  .form-right {
+    width: -webkit-fill-available;
+    padding: 15px 30px 15px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* 내용 부분 크게 만들기 */
+  .add-post #post-content {
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    resize: none;
+  }
+  
+  .agreement-section {
+    border: 1px solid #ccc; /* 테두리 스타일 지정 */
+    padding: 10px; /* 안쪽 여백 추가 */
+    margin-bottom: 20px; /* 아래쪽으로 간격 추가 */
+  }
+  
+  /* 제출 버튼 스타일 */
+  .add-post input[type="submit"] {
+    font-size: 14px;
+    padding: 12px 24px;
+    background-color: #8ca3cf;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 150px;
+    margin-top: 10px; /* 위쪽으로 간격 추가 */
+  }
+  
+  .add-post input[type="submit"]:hover {
+    background-color: #a2cefd;
+  }
+
+/* 로그인/로그아웃 버튼 공통 스타일 */
+.header-button {
+  text-decoration: none;
+  color: #007bff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* 배경색 변경 시 부드럽게 전환 */
+}
+
+.header-button:hover {
+  background-color: #a2cefd;
+}
+

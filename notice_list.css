@@ -1,0 +1,95 @@
+
+header {
+  background-color: #a2cefd;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  color: #000; /* 검은색으로 변경하고 싶은 부분 */
+}
+
+header button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #8ca3cf;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* 배경색 변경 시 부드럽게 전환 */
+}
+
+header button:hover {
+  background-color: #a2cefd;
+}
+
+/* 게시물 목록 섹션 스타일 */
+.board {
+  text-align: center;
+  margin: 30px;
+}
+
+.board h2 {
+  margin-bottom: 20px;
+}
+
+#post-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+#post-list li {
+  margin-bottom: 10px;
+}
+
+#post-list li a {
+  text-decoration: none;
+  color: #007bff;
+  display: block;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: background-color 0.3s ease; /* 배경색 변경 시 부드럽게 전환 */
+}
+
+#post-list li a:hover {
+  background-color: #f2f2f2;
+}
+
+/* 게시물 세부 정보 스타일 */
+.post {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 30px;
+}
+
+.post h2 {
+  color: #007bff;
+}
+
+.post-options a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: #007bff;
+  transition: color 0.3s ease; /* 색상 변경 시 부드럽게 전환 */
+}
+
+.post-options a:hover {
+  color: #0056b3;
+}
+
+.post-details p {
+  margin-bottom: 10px;
+}
+
+.post-content {
+  margin-top: 15px;
+  border-top: 1px solid #ccc;
+  padding-top: 15px;
+}
+

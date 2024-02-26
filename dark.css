@@ -1,0 +1,7 @@
+body {
+    background-color: #e8fcfd!important; /* 바탕 색상 */
+}
+
+.review-before-quote {
+    color: #000; /* 리뷰 작성 멘트 색상 */
+}

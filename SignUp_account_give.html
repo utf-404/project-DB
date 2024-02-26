@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>signUp_account</title>
+  <style>
+    /* 팝업 스타일 */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: lightgreen;
+      border: 1px solid #ccc;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<link rel="stylesheet" type="text/css" href="account.css">
+<body>
+  <h1>기부자 회원 가입 페이지 입니다</h1>
+    <form action="account_give.php" method="post">
+      <div class="account_give">
+        <input type="text" id="id" name="id" placeholder="아이디" class="input" value="" maxlength="50" autocapitalize="off">
+
+        <input type="password" id="pswd1" name="pswd1" placeholder="비밀번호" class="input" value="" maxlength="5000" autocomplete="new-password">
+
+        <input type="text" id="username" name="username" placeholder="이름" class="input" value="" maxlength="50">
+
+        <input type="email" id="email" name="email" placeholder="이메일" class="input" value="" maxlength="100">
+        
+        <input type="tel" id="phonenum" name="phonenum" placeholder="휴대전화번호" class="input" value="" maxlength="16">
+      </label>
+      <label for="education">장애인 인식 교육 여부:
+        <input type="checkbox" id="education" name="educationCheck" value="y">
+      </label>
+      <input type="hidden" name="education" value="n"> <!-- 체크 안 됐을 때 'n'로 전송 -->
+        
+        <br><br>
+    
+        <input type="submit" value="가입">
+      </div>
+
+      <div class="volunteer_text">
+        <h2>행복한 지역사회를 만들어 나가는 중심은</h2>
+        <h2>여러분입니다.</h2>
+        <h2>따뜻한 마음, 재능, 소중한 시간으로</h2>
+        <h2>나눔에 참여하세요.</h2>
+      </div>
+
+      
+      
+    </form>
+</body>
+</html>
+
+
+<!--
+  
+-->
